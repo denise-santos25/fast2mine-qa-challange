@@ -1,0 +1,42 @@
+version: "3.9"
+
+services:
+  tests-web:
+    build: .
+    image: fast2mine-qa:latest
+    container_name: fast2mine-tests-web
+    environment:
+      - ENV=${ENV:-QA1}
+      - QA1_USERNAME=${QA1_USERNAME}
+      - QA1_PASSWORD=${QA1_PASSWORD}
+      - QA2_USERNAME=${QA2_USERNAME}
+      - QA2_PASSWORD=${QA2_PASSWORD}
+      - QA3_USERNAME=${QA3_USERNAME}
+      - QA3_PASSWORD=${QA3_PASSWORD}
+    volumes:
+      - ./results:/app/results
+    command: ["${ENV:-QA1}", "web"]
+
+  tests-api:
+    build: .
+    image: fast2mine-qa:latest
+    container_name: fast2mine-tests-api
+    environment:
+      - ENV=${ENV:-QA1}
+      - QA1_USERNAME=${QA1_USERNAME}
+      - QA1_PASSWORD=${QA1_PASSWORD}
+    volumes:
+      - ./results:/app/results
+    command: ["${ENV:-QA1}", "api"]
+
+  allure:
+    image: frankescobar/allure-docker-service:latest
+    container_name: fast2mine-allure
+    ports:
+      - "5050:5050"
+    environment:
+      - CHECK_RESULTS_EVERY_SECONDS=3
+      - KEEP_HISTORY=1
+    volumes:
+      - ./results/allure-results:/app/allure-results
+      - ./results/allure-reports:/app/default-reports

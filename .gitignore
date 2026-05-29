@@ -1,0 +1,37 @@
+# Resultados
+results/
+output.xml
+log.html
+report.html
+*.png
+*.webm
+*.har
+
+# Secrets
+.env
+.env.local
+*.pem
+*.key
+
+# Python
+*.pyc
+__pycache__/
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+
+# Node
+node_modules/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Pabot
+pabot_results/

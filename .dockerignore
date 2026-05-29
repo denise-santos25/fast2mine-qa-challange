@@ -1,0 +1,14 @@
+.git
+.github
+results/
+docs/evidencias/dryrun_*
+*.pyc
+__pycache__/
+.venv/
+venv/
+.idea/
+.vscode/
+node_modules/
+*.log
+.DS_Store
+.env

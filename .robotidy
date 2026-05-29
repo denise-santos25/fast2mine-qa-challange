@@ -1,0 +1,8 @@
+# Robotidy - Robot Framework Formatter
+# https://robotidy.readthedocs.io
+
+--line-length 120
+--spacecount 4
+--indent 4
+--lineseparator unix
+--target-version rf6

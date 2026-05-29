@@ -1,0 +1,17 @@
+# Robocop - Robot Framework Linter
+# https://robocop.readthedocs.io
+
+# Severidade mínima reportada
+--threshold W
+
+# Regras desabilitadas (justificadas)
+--exclude line-too-long  # já validamos formatação via Robotidy
+--exclude todo-in-comment  # permitimos TODOs documentados
+
+# Reporta também regras informativas
+--reports return_status
+
+# Arquivos a ignorar
+--exclude-path results/
+--exclude-path .venv/
+--exclude-path node_modules/

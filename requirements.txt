@@ -1,0 +1,24 @@
+# Core
+robotframework==7.1.1
+
+# Web
+robotframework-browser==18.9.1
+
+# Mobile
+robotframework-appiumlibrary==2.0.0
+Appium-Python-Client==4.1.0
+
+# API
+robotframework-requests==0.9.7
+requests==2.32.3
+jsonschema==4.23.0
+
+# Paralelização
+robotframework-pabot==4.1.0
+
+# Reporting
+allure-robotframework==2.13.5
+
+# Qualidade de código (dev)
+robotframework-robocop==5.6.0
+robotframework-tidy==4.16.0
