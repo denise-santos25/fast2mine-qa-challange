@@ -207,34 +207,6 @@ docker compose up allure
 
 ---
 
-## 🤖 CI/CD
-
-Pipeline em `.github/workflows/tests.yml` executa em **3 estágios**:
-
-```
-STAGE 1: LINT
-  - Robocop (regras Robot)
-  - Robotidy --check (formatação)
-       ↓ blocked if fails
-STAGE 2: TESTS (Matriz paralela 3×2 = 6 jobs)
-  - QA1 web / QA1 api
-  - QA2 web / QA2 api
-  - QA3 web / QA3 api
-       ↓
-STAGE 3: AGGREGATE
-  - Allure report consolidado
-  - Upload de artifacts (30 dias retention)
-  - Comentário no PR com resultados
-```
-
-**Triggers:**
-- Push em `main`/`develop`
-- Pull Request para `main`
-- Smoke noturno agendado (06:00 UTC)
-- Manual via `workflow_dispatch` (escolhendo ambiente e tipo)
-
----
-
 ## 📊 Reporting & Observabilidade
 
 Quatro níveis de observabilidade:
